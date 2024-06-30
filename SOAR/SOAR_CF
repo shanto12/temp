@@ -1,0 +1,65 @@
+
+def dicts_to_csv_attachment(dict_list=None, file_name=None, column_names=None, container_id=None, **kwargs):
+    """
+    Args:
+        dict_list: List of dictionaries to be written to CSV
+        file_name: Name of the CSV file to be created
+        column_names: Comma-separated string of column names
+        container_id: Container ID for storing the CSV file in the vault
+    
+    Returns a JSON-serializable object that implements the configured data paths:
+        vault_id
+    """
+    ############################ Custom Code Goes Below This Line #################################
+    import json
+    import phantom.rules as phantom
+    import csv
+    import os
+
+    outputs = {}
+
+    # Get the Phantom home directory
+    phantom_home = phantom.get_phantom_home()
+    phantom.debug(f'Phantom home: {phantom_home}')
+    
+    # Define the file path
+    file_path = f'{phantom_home}/vault/tmp/{file_name}'
+    phantom.debug(f'file_path: {file_path}')
+    
+    # If column_names is provided, split it into a list
+    if column_names:
+        column_names = [col.strip() for col in column_names.split(',')]
+    
+    # Check if column_names is valid
+    if not column_names or len(column_names) != len(dict_list[0].keys()):
+        column_names = list(dict_list[0].keys())
+
+    phantom.debug(f'Column names used for CSV: {column_names}')
+
+    # Create a CSV file from the list of dictionaries
+    with open(file_path, 'w', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=column_names)
+        writer.writeheader()
+        writer.writerows(dict_list)
+
+    phantom.debug(f'CSV file created at: {file_path}')
+
+    # Add the file to the vault
+    success, message, vault_id = phantom.vault_add(container=container_id, file_location=file_path, file_name=file_name)
+
+    phantom.debug(f'Vault add result: success={success}, message={message}, vault_id={vault_id}')
+
+    # Remove the CSV file from /tmp
+    try:
+        os.remove(file_path)
+    except OSError as e:
+        phantom.debug(f'Error removing file: {e}')
+    else:
+        phantom.debug(f'CSV file removed from: {file_path}')
+    
+    # Return the vault_id of the vault item created
+    outputs["vault_id"] = vault_id
+
+    # Return a JSON-serializable object
+    assert json.dumps(outputs)  # Will raise an exception if the :outputs: object is not JSON-serializable
+    return outputs
