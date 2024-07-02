@@ -19,9 +19,10 @@ def dicts_to_csv_attachment(dict_list=None, file_name=None, column_names=None, c
     outputs = {}
 
     # Print the number of dictionaries in the list
-    phantom.debug(f'Number of dictionaries in the list: {len(dict_list)}')
+    num_dicts = len(dict_list)
+    phantom.debug(f'Number of dictionaries in the list: {num_dicts}')
 
-    # If file_name doesn't end with .csv, add it
+    # Ensure the file name ends with .csv
     if not file_name.endswith('.csv'):
         file_name += '.csv'
     
@@ -30,7 +31,7 @@ def dicts_to_csv_attachment(dict_list=None, file_name=None, column_names=None, c
     phantom.debug(f'Phantom home: {phantom_home}')
     
     # Define the file path
-    file_path = f'{phantom_home}/vault/tmp/{file_name}'
+    file_path = os.path.join(phantom_home, 'vault', 'tmp', file_name)
     phantom.debug(f'file_path: {file_path}')
     
     # Convert take_all_dict_keys to boolean
@@ -44,16 +45,13 @@ def dicts_to_csv_attachment(dict_list=None, file_name=None, column_names=None, c
     else:
         column_names = [col.strip().lower() for col in column_names.split(',')]
         phantom.debug(f'Number of column headers provided: {len(column_names)}')
-    
+
     phantom.debug(f'take_all_dict_keys: {take_all_dict_keys}')
     
     # Determine column names to be used
     if take_all_dict_keys:
         # Get all keys from all dictionaries
-        all_keys = set()
-        for d in dict_list:
-            all_keys.update(d.keys())
-        column_names = sorted(list(all_keys))
+        column_names = sorted({key for d in dict_list for key in d.keys()})
         phantom.debug('Taking all dictionary keys as columns')
     else:
         phantom.debug(f'Column names used for CSV: {column_names}')
@@ -70,7 +68,6 @@ def dicts_to_csv_attachment(dict_list=None, file_name=None, column_names=None, c
 
     # Add the file to the vault
     success, message, vault_id = phantom.vault_add(container=container_id, file_location=file_path, file_name=file_name)
-
     phantom.debug(f'Vault add result: success={success}, message={message}, vault_id={vault_id}')
 
     # Remove the CSV file from /tmp
