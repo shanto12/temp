@@ -1,11 +1,11 @@
-
-def dicts_to_csv_attachment(dict_list=None, file_name=None, column_names=None, container_id=None, **kwargs):
+def dicts_to_csv_attachment(dict_list=None, file_name=None, column_names=None, container_id=None, take_all_dict_keys=None, **kwargs):
     """
     Args:
         dict_list: List of dictionaries to be written to CSV
         file_name: Name of the CSV file to be created
         column_names: Comma-separated string of column names
         container_id: Container ID for storing the CSV file in the vault
+        take_all_dict_keys: Boolean or string indicating whether to take all dictionary keys as columns
     
     Returns a JSON-serializable object that implements the configured data paths:
         vault_id
@@ -18,6 +18,13 @@ def dicts_to_csv_attachment(dict_list=None, file_name=None, column_names=None, c
 
     outputs = {}
 
+    # Print the number of dictionaries in the list
+    phantom.debug(f'Number of dictionaries in the list: {len(dict_list)}')
+
+    # If file_name doesn't end with .csv, add it
+    if not file_name.endswith('.csv'):
+        file_name += '.csv'
+    
     # Get the Phantom home directory
     phantom_home = phantom.get_phantom_home()
     phantom.debug(f'Phantom home: {phantom_home}')
@@ -26,21 +33,39 @@ def dicts_to_csv_attachment(dict_list=None, file_name=None, column_names=None, c
     file_path = f'{phantom_home}/vault/tmp/{file_name}'
     phantom.debug(f'file_path: {file_path}')
     
+    # Convert take_all_dict_keys to boolean
+    if isinstance(take_all_dict_keys, str):
+        take_all_dict_keys = take_all_dict_keys.lower() == 'true'
+    take_all_dict_keys = bool(take_all_dict_keys)
+    
+    phantom.debug(f'take_all_dict_keys: {take_all_dict_keys}')
+    
     # If column_names is provided, split it into a list
     if column_names:
-        column_names = [col.strip() for col in column_names.split(',')]
+        column_names = [col.strip().lower() for col in column_names.split(',')]
+        phantom.debug(f'Number of column headers provided: {len(column_names)}')
     
-    # Check if column_names is valid
-    if not column_names or len(column_names) != len(dict_list[0].keys()):
+    # Check if column_names is valid or take_all_dict_keys is True
+    if take_all_dict_keys:
+        # Get all keys from all dictionaries
+        all_keys = set()
+        for d in dict_list:
+            all_keys.update(d.keys())
+        column_names = sorted(list(all_keys))
+        phantom.debug('Taking all dictionary keys as columns')
+    elif not column_names or any(len(column_names) != len(d.keys()) for d in dict_list):
+        # Use dictionary keys as column headers
         column_names = list(dict_list[0].keys())
-
+    
     phantom.debug(f'Column names used for CSV: {column_names}')
-
+    
     # Create a CSV file from the list of dictionaries
     with open(file_path, 'w', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=column_names)
         writer.writeheader()
-        writer.writerows(dict_list)
+        for d in dict_list:
+            row = {col: d.get(col, '') for col in column_names}
+            writer.writerow(row)
 
     phantom.debug(f'CSV file created at: {file_path}')
 
