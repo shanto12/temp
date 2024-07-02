@@ -38,14 +38,16 @@ def dicts_to_csv_attachment(dict_list=None, file_name=None, column_names=None, c
         take_all_dict_keys = take_all_dict_keys.lower() == 'true'
     take_all_dict_keys = bool(take_all_dict_keys)
     
-    phantom.debug(f'take_all_dict_keys: {take_all_dict_keys}')
-    
-    # If column_names is provided, split it into a list
-    if column_names:
+    # If column_names is not provided or empty, set take_all_dict_keys to True
+    if not column_names:
+        take_all_dict_keys = True
+    else:
         column_names = [col.strip().lower() for col in column_names.split(',')]
         phantom.debug(f'Number of column headers provided: {len(column_names)}')
     
-    # Check if column_names is valid or take_all_dict_keys is True
+    phantom.debug(f'take_all_dict_keys: {take_all_dict_keys}')
+    
+    # Determine column names to be used
     if take_all_dict_keys:
         # Get all keys from all dictionaries
         all_keys = set()
@@ -53,11 +55,8 @@ def dicts_to_csv_attachment(dict_list=None, file_name=None, column_names=None, c
             all_keys.update(d.keys())
         column_names = sorted(list(all_keys))
         phantom.debug('Taking all dictionary keys as columns')
-    elif not column_names or any(len(column_names) != len(d.keys()) for d in dict_list):
-        # Use dictionary keys as column headers
-        column_names = list(dict_list[0].keys())
-    
-    phantom.debug(f'Column names used for CSV: {column_names}')
+    else:
+        phantom.debug(f'Column names used for CSV: {column_names}')
     
     # Create a CSV file from the list of dictionaries
     with open(file_path, 'w', newline='') as f:
