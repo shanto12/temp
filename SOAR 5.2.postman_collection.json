@@ -1,0 +1,2916 @@
+{
+	"info": {
+		"_postman_id": "dcbe8e34-a66a-4bd4-a1eb-83a38d4502f8",
+		"name": "SOAR 5.2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "11393694"
+	},
+	"item": [
+		{
+			"name": "Get Container Attachments",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/container_attachment?_filter_container_id__in=[10, 16, 14, 12]",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"container_attachment"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "_filter_container_id__in",
+							"value": "[10, 16, 14, 12]"
+						},
+						{
+							"key": "include_expensive",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Run action",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"action\": \"lookup domain\",\r\n    \"container_id\": 231,\r\n    \"name\": \"LookupDomainAction\",\r\n    \"type\": \"investigate\",\r\n    \"targets\": [\r\n        {\r\n            \"app_id\": \"33\",\r\n            \"assets\": [\"google_dns\"],\r\n            \"parameters\": [\r\n                {\r\n                    \"domain\": \"google.com\",\r\n                    \"type\": \"A\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}\r\n"
+				},
+				"url": "https://{{username}}:{{password}}@{{host}}/rest/action_run"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Container Attachments 2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/container/73/attachments",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"container",
+						"73",
+						"attachments"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Export container",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/container/175/export?file_list[]=1&file_list[]=2&file_list[]=3&file_list[]=4&file_list[]=5",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"container",
+						"175",
+						"export"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "file_list[]",
+							"value": "1"
+						},
+						{
+							"key": "file_list[]",
+							"value": "2"
+						},
+						{
+							"key": "file_list[]",
+							"value": "3"
+						},
+						{
+							"key": "file_list[]",
+							"value": "4"
+						},
+						{
+							"key": "file_list[]",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Import container",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"file_path\": \"/home/phantom/response.tar\"\r\n}"
+				},
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/import_event",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"import_event"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "file_list[]",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "file_list[]",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Note",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"title\": \"shanto\",\r\n\"content\": \"shanto\"\r\n}"
+				},
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/note/73",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"note",
+						"73"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "file_list[]",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "file_list[]",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Notes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"file_path\": \"/home/phantom/response.tar\"\r\n}"
+				},
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/note?_filter_create_time__gt=\"2023-06-15T02:42:02.075668Z\"&page_size=0&_exclude_title=\"shanto\"",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"note"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "file_list[]",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "_filter_container",
+							"value": "231",
+							"disabled": true
+						},
+						{
+							"key": "_filter_create_time__gt",
+							"value": "\"2023-06-15T02:42:02.075668Z\""
+						},
+						{
+							"key": "page_size",
+							"value": "0"
+						},
+						{
+							"key": "_exclude_title",
+							"value": "\"shanto\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Download container attachments",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/container/12/export?file_list[]=3&file_list[]=1&file_list[]=2&file_list[]=4&file_list[]=5",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"container",
+						"12",
+						"export"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "file_list[]",
+							"value": "3"
+						},
+						{
+							"key": "file_list[]",
+							"value": "1"
+						},
+						{
+							"key": "file_list[]",
+							"value": "2"
+						},
+						{
+							"key": "file_list[]",
+							"value": "4"
+						},
+						{
+							"key": "file_list[]",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Vault Docs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/vault_document?_filter_container=231",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"vault_document"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_container",
+							"value": "231"
+						},
+						{
+							"key": "include_expensive",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Vault Hash",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/vault_document/23",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"vault_document",
+						"23"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get containers with at least one artifact",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/container?_filter_artifact_count__gt=0",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"container"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact_count__gt",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Artifacts with non null urls",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/artifact?_filter_cef__requestURL__isnull=False",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"artifact"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "_filter_cef__requestURL__isnull",
+							"value": "False"
+						},
+						{
+							"key": "_filter_container__in",
+							"value": "[15, 16]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_cef__icontains",
+							"value": "\"domain\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_cef__in",
+							"value": "[\"url\", \"domain\"]",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Artifacts for a container",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/artifact?_filter_container=188",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"artifact"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "_filter_cef__requestURL__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "_filter_container__in",
+							"value": "[15, 16]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_cef__icontains",
+							"value": "\"domain\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_container",
+							"value": "188"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bulk Delete Artifacts",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"ids\": [490,489,488]}"
+				},
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/artifact",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"artifact"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "_filter_cef__requestURL__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "_filter_container__in",
+							"value": "[15, 16]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_cef__icontains",
+							"value": "\"domain\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_container",
+							"value": "188",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a container custom field",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"custom_fields\": {\r\n        \"test\": null,\r\n        \"test2\": null,\r\n        \"tseat\": null,\r\n        \"test34\": null\r\n    }\r\n}"
+				},
+				"url": "https://{{username}}:{{password}}@{{host}}/rest/container/189"
+			},
+			"response": []
+		},
+		{
+			"name": "Get containers with at least one requestURL in it",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/container?include_expensive=&_filter_artifact__cef__requestURL__isnull=False",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"container"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": ""
+						},
+						{
+							"key": "_filter_artifact_count__gt",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__requestURL__isnull",
+							"value": "False"
+						},
+						{
+							"key": "_filter_artifact__cef__destinationDnsDomain__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__sourceDnsDomain__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__contains",
+							"value": "[\"requestURL\", \"sourceDnsDomain\", \"destinationDnsDomain\"]",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get container details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/container/189?include_expensive&_filter_create_time__gte=2022-03-15T09:48:29.392278Z",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"container",
+						"189"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact_count__gt",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__destinationDnsDomain__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__sourceDnsDomain__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__contains",
+							"value": "[\"requestURL\", \"sourceDnsDomain\", \"destinationDnsDomain\"]",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": null
+						},
+						{
+							"key": "_filter_create_time__gte",
+							"value": "2022-03-15T09:48:29.392278Z"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get container details using token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{host}}/rest/container/189?include_expensive&_filter_create_time__gte=\"2022-03-15T09:48:29.392278Z\"",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"container",
+						"189"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact_count__gt",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__destinationDnsDomain__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__sourceDnsDomain__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__contains",
+							"value": "[\"requestURL\", \"sourceDnsDomain\", \"destinationDnsDomain\"]",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": null
+						},
+						{
+							"key": "_filter_create_time__gte",
+							"value": "\"2022-03-15T09:48:29.392278Z\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Containers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/container?_filter_tags__contains=\"respond\"&_filter_create_time__gte=\"2023-01-28T12:21:58.621618Z\"&page_size=0",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"container"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__contains",
+							"value": "\"respond\""
+						},
+						{
+							"key": "_filter_artifact_count__gt",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__destinationDnsDomain__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__sourceDnsDomain__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__contains",
+							"value": "[\"requestURL\", \"sourceDnsDomain\", \"destinationDnsDomain\"]",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "_filter_create_time__gte",
+							"value": "\"2023-01-28T12:21:58.621618Z\""
+						},
+						{
+							"key": "page_size",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get containers with at least one destinationDnsDomain in it",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/container?include_expensive=&_filter_artifact__cef__destinationDnsDomain__isnull=False",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"container"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": ""
+						},
+						{
+							"key": "_filter_artifact_count__gt",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__requestURL__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__destinationDnsDomain__isnull",
+							"value": "False"
+						},
+						{
+							"key": "_filter_artifact__cef__sourceDnsDomain__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__contains",
+							"value": "[\"requestURL\", \"sourceDnsDomain\", \"destinationDnsDomain\"]",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get containers with at least one sourceDnsDomain in it",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/container?include_expensive=&_filter_artifact__cef__sourceDnsDomain__isnull=False",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"container"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": ""
+						},
+						{
+							"key": "_filter_artifact_count__gt",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__requestURL__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__destinationDnsDomain__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__sourceDnsDomain__isnull",
+							"value": "False"
+						},
+						{
+							"key": "_filter_artifact__cef__contains",
+							"value": "[\"requestURL\", \"sourceDnsDomain\", \"destinationDnsDomain\"]",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get containers with filters",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/container?page_size=0&_filter_status__in=1, 2&_filter_severity__in=\"low\",\"medium\"&include_expensive",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"container"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact_count__gt",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__requestURL__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__destinationDnsDomain__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__sourceDnsDomain__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__contains",
+							"value": "[\"requestURL\", \"sourceDnsDomain\", \"destinationDnsDomain\"]",
+							"disabled": true
+						},
+						{
+							"key": "page_size",
+							"value": "0"
+						},
+						{
+							"key": "_filter_status__in",
+							"value": "1, 2"
+						},
+						{
+							"key": "_filter_severity__in",
+							"value": "\"low\",\"medium\""
+						},
+						{
+							"key": "include_expensive",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Container Status",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/container_status?_filter_name__in=[\"new\",\"open\"]&page_size=0",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"container_status"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact_count__gt",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__requestURL__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__destinationDnsDomain__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__sourceDnsDomain__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__contains",
+							"value": "[\"requestURL\", \"sourceDnsDomain\", \"destinationDnsDomain\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_name__in",
+							"value": "[\"new\",\"open\"]"
+						},
+						{
+							"key": "page_size",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get containers with attachments",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "{{ph-auth-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/container?_filter_create_time__gte=\"2022-10-10\"&_filter_label=\"splunk_es\"",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"container"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact_count__gt",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__destinationDnsDomain__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__sourceDnsDomain__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "timerange",
+							"value": "today",
+							"disabled": true
+						},
+						{
+							"key": "_filter_create_time__gte",
+							"value": "\"2022-10-10\""
+						},
+						{
+							"key": "_filter_label",
+							"value": "\"splunk_es\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get container with expensive data",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "{{ph-auth-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/container/25?include_expensive",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"container",
+						"25"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact_count__gt",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__destinationDnsDomain__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__sourceDnsDomain__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "timerange",
+							"value": "today",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find running Playbooks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/playbook_run?sort=start_time&order=desc&_filter_status=\"running\"&_filter_start_time__lte=\"2022-11-23 11:22:57\"&include_expensive=",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"playbook_run"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "start_time"
+						},
+						{
+							"key": "order",
+							"value": "desc"
+						},
+						{
+							"key": "_filter_status",
+							"value": "\"running\""
+						},
+						{
+							"key": "_filter_start_time__lte",
+							"value": "\"2022-11-23 11:22:57\""
+						},
+						{
+							"key": "include_expensive",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Playbooks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/playbook?_filter_tags__icontains=\"brian\"",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"playbook"
+					],
+					"query": [
+						{
+							"key": "_filter_active",
+							"value": "True",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "_filter_playbook_type",
+							"value": "\"data\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_id",
+							"value": "\"580\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_id__in",
+							"value": "[563, 574]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__icontains",
+							"value": "\"brian\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Export Playbook",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://{{username}}:{{password}}@{{host}}/rest/playbook/232/export"
+			},
+			"response": []
+		},
+		{
+			"name": "Get custom functions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/custom_function?_filter_scm=3",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"custom_function"
+					],
+					"query": [
+						{
+							"key": "_filter_scm",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Repositories",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/scm?_filter_name=\"General_PB_Custom_Functions\"&page_size=0",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"scm"
+					],
+					"query": [
+						{
+							"key": "_filter_name",
+							"value": "\"General_PB_Custom_Functions\""
+						},
+						{
+							"key": "page_size",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get app details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/app?include_expensive&_filter_python_version=\"2.7\"",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"app"
+					],
+					"query": [
+						{
+							"key": "_filter_name",
+							"value": "\"Splunk\"",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": null
+						},
+						{
+							"key": "_filter_python_version",
+							"value": "\"3\"",
+							"disabled": true
+						},
+						{
+							"key": "_exclude_python_version",
+							"value": "\"3\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_python_version",
+							"value": "\"2.7\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get asset details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/asset?_filter_name=\"google_dns\"",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"asset"
+					],
+					"query": [
+						{
+							"key": "_filter_name",
+							"value": "\"google_dns\""
+						},
+						{
+							"key": "include_expensive",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find an app",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/app?_filter_name=\"Windows Defender ATP\"",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"app"
+					],
+					"query": [
+						{
+							"key": "_filter_name",
+							"value": "\"Windows Defender ATP\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find the asset runs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": "https://{{username}}:{{password}}@{{host}}/rest/action_run"
+			},
+			"response": []
+		},
+		{
+			"name": "Find all runs of an app",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/app_run?_filter_app_name=\"Windows Defender ATP\"&sort=start_time&order=desc&page=2",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"app_run"
+					],
+					"query": [
+						{
+							"key": "_filter_app_name",
+							"value": "\"Windows Defender ATP\""
+						},
+						{
+							"key": "sort",
+							"value": "start_time"
+						},
+						{
+							"key": "order",
+							"value": "desc"
+						},
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Export playbook",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": "https://{{username}}:{{password}}@{{host}}/rest/playbook/290/export"
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel a running playbook",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"cancel\": true}"
+				},
+				"url": "https://{{username}}:{{password}}@{{host}}/rest/playbook_run/635"
+			},
+			"response": []
+		},
+		{
+			"name": "Get containers string in its name and not closed",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "{{ph-auth-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{host}}/rest/container?_filter_label=\"phishing\"&_exclude_status=3",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"container"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact_count__gt",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__destinationDnsDomain__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__sourceDnsDomain__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "timerange",
+							"value": "today",
+							"disabled": true
+						},
+						{
+							"key": "_filter_create_time__gte",
+							"value": "\"2022-10-10\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_label",
+							"value": "\"phishing\""
+						},
+						{
+							"key": "_filter_name__contains",
+							"value": "\"NPP\"",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "create_time",
+							"disabled": true
+						},
+						{
+							"key": "order",
+							"value": "desc",
+							"disabled": true
+						},
+						{
+							"key": "page_size",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "_filter_status__In",
+							"value": "[\"new\"]",
+							"disabled": true
+						},
+						{
+							"key": "_exclude_status",
+							"value": "3"
+						},
+						{
+							"key": "_filter_artifact__cef__close_time__isnull",
+							"value": "True",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find a playbook run",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"cancel\": true}"
+				},
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/playbook_run/2130264?include_expensive",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"playbook_run",
+						"2130264"
+					],
+					"query": [
+						{
+							"key": "include_expensive",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find playbooks runs on a container",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"cancel\": true}"
+				},
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/playbook_run?_filter_container=58&order=\"asc\"&sort=start_time",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"playbook_run"
+					],
+					"query": [
+						{
+							"key": "_filter_container",
+							"value": "58"
+						},
+						{
+							"key": "order",
+							"value": "\"asc\""
+						},
+						{
+							"key": "sort",
+							"value": "start_time"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find all playbook runs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"cancel\": true}"
+				},
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/playbook_run?_filter_id__in=2436202, 2436232, 2436227, 2436230, 2436243, 2436197, 2436197, 2436232, 2436243, 2436257",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"playbook_run"
+					],
+					"query": [
+						{
+							"key": "_filter_container",
+							"value": "58",
+							"disabled": true
+						},
+						{
+							"key": "order",
+							"value": "\"asc\"",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "start_time",
+							"disabled": true
+						},
+						{
+							"key": "scm",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "_filter_start_time__gt",
+							"value": "\"2023-03-13T11:23:05.957412Z\"",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "_filter_container",
+							"value": "194",
+							"disabled": true
+						},
+						{
+							"key": "_filter_parent_run",
+							"value": "478",
+							"disabled": true
+						},
+						{
+							"key": "_filter_id__in",
+							"value": "2436202, 2436232, 2436227, 2436230, 2436243, 2436197, 2436197, 2436232, 2436243, 2436257"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find all action runs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"cancel\": true}"
+				},
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/action_run?_filter_playbook__isnull=False&_filter_status=\"failed\"&_filter_create_time__gte=\"2023-2-23T23:29:52.831000Z\"&page_size=0",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"action_run"
+					],
+					"query": [
+						{
+							"key": "_filter_container",
+							"value": "194",
+							"disabled": true
+						},
+						{
+							"key": "_filter_playbook_run__in",
+							"value": "479,",
+							"disabled": true
+						},
+						{
+							"key": "_filter_playbook__isnull",
+							"value": "False"
+						},
+						{
+							"key": "_filter_status",
+							"value": "\"failed\""
+						},
+						{
+							"key": "_filter_create_time__gte",
+							"value": "\"2023-2-23T23:29:52.831000Z\""
+						},
+						{
+							"key": "page_size",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post to data REST source",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"container_data\": {\r\n    \"asset_id\": \"4\",\r\n    \"status\": \"new\",\r\n    \"description\": \"7PJFMqhL1U1IuK7AuXdJKsoAea\",\r\n    \"name\": \"qlmc1oh7nkr99ob9mpmfoq1sdm\",\r\n    \"sensitivity\": \"amber\",\r\n    \"source_data_identifier\": \"kmjafnviJxaXsRlaIVPm52BbAw\",\r\n    \"due_time\": \"2016-01-14T21:54:39.517382Z\",\r\n    \"end_time\": \"2016-01-14T21:54:39.517555Z\",\r\n    \"ingest_connector_id\": 437614,\r\n    \"data\": {\r\n      \"data_field1\": \"BGhXm6wizmLjt\"\r\n    },\r\n    \"start_time\": \"2016-01-14T21:54:39.517955Z\",\r\n    \"severity\": \"medium\",\r\n    \"artifact_data\": {\r\n      \"asset_id\": 601925,\r\n      \"cef\": {\r\n        \"requestClientApplication\": \"\",\r\n        \"destinationAddress\": \"\",\r\n        \"deviceFacility\": \"\",\r\n        \"deviceExternalId\": \"\",\r\n        \"cn2Label\": \"\",\r\n        \"deviceCustomDate1\": \"\",\r\n        \"deviceCustomDate2\": \"\",\r\n        \"cs1\": \"\",\r\n        \"deviceCustomNumber3Label\": \"\",\r\n        \"destinationDnsDomain\": \"\",\r\n        \"destinationUserName\": \"\",\r\n        \"fileHash\": \"8b317b683d052efda16ab03c68ae2dee\",\r\n        \"filePath\": \"\",\r\n        \"end\": \"\",\r\n        \"sourceTranslatedAddress\": \"\",\r\n        \"fileName\": \"UNAVAILABLE\",\r\n        \"fileModificationTime\": \"\",\r\n        \"deviceCustomString5Label\": \"\",\r\n        \"deviceAddress\": \"\",\r\n        \"destinationHostName\": \"\",\r\n        \"fileId\": \"\",\r\n        \"dpt\": \"\",\r\n        \"oldfileHash\": \"\",\r\n        \"destinationServiceName\": \"\",\r\n        \"sourceNtDomain\": \"\",\r\n        \"requestMethod\": \"\",\r\n        \"cn1Label\": \"\",\r\n        \"sourceDnsDomain\": \"\",\r\n        \"endTime\": \"\",\r\n        \"sourceAddress\": \"10.10.0.201\",\r\n        \"bytesIn\": \"\",\r\n        \"bytesOut\": \"\",\r\n        \"deviceProcessName\": \"\",\r\n        \"cn3Label\": \"\",\r\n        \"deviceCustomString4Label\": \"\",\r\n        \"cs6Label\": \"\",\r\n        \"out\": \"\",\r\n        \"rt\": \"\",\r\n        \"cnt\": \"\",\r\n        \"sourceHostName\": \"\",\r\n        \"deviceCustomNumber3\": \"\",\r\n        \"dst\": \"103.230.84.239\",\r\n        \"deviceHostname\": \"\",\r\n        \"deviceCustomNumber1Label\": \"\",\r\n        \"externalId\": \"\",\r\n        \"deviceDirection\": \"\",\r\n        \"method\": \"\",\r\n        \"dmac\": \"\",\r\n        \"oldfileId\": \"\",\r\n        \"sourceServiceName\": \"\",\r\n        \"baseEventCount\": \"120\",\r\n        \"dvchost\": \"\",\r\n        \"destinationUserPrivileges\": \"\",\r\n        \"fileSize\": \"\",\r\n        \"sourceMacAddress\": \"\",\r\n        \"deviceCustomString6\": \"\",\r\n        \"deviceCustomString5\": \"\",\r\n        \"deviceCustomString4\": \"\",\r\n        \"deviceCustomString3\": \"\",\r\n        \"deviceCustomString1Label\": \"\",\r\n        \"destinationMacAddress\": \"\",\r\n        \"duser\": \"\",\r\n        \"cs3Label\": \"\",\r\n        \"cn2\": \"\",\r\n        \"cn3\": \"\",\r\n        \"destinationTranslatedAddress\": \"\",\r\n        \"cn1\": \"\",\r\n        \"deviceCustomString3Label\": \"\",\r\n        \"act\": \"\",\r\n        \"dhost\": \"\",\r\n        \"filePermission\": \"\",\r\n        \"dntdom\": \"\",\r\n        \"deviceCustomString6Label\": \"\",\r\n        \"app\": \"\",\r\n        \"smac\": \"\",\r\n        \"deviceInboundInterface\": \"\",\r\n        \"message\": \"\",\r\n        \"deviceDnsDomain\": \"\",\r\n        \"deviceCustomNumber2\": \"\",\r\n        \"deviceCustomNumber1\": \"\",\r\n        \"deviceCustomDate2Label\": \"\",\r\n        \"dpriv\": \"\",\r\n        \"suid\": \"\",\r\n        \"oldfilePermission\": \"\",\r\n        \"deviceCustomString2\": \"\",\r\n        \"start\": \"\",\r\n        \"deviceCustomString1\": \"\",\r\n        \"msg\": \"\",\r\n        \"src\": \"\",\r\n        \"sourceUserId\": \"\",\r\n        \"requestURL\": \"\",\r\n        \"sourceUserName\": \"\",\r\n        \"sourceTranslatedPort\": \"\",\r\n        \"oldfileType\": \"\",\r\n        \"destinationPort\": \"80\",\r\n        \"destinationUserId\": \"\",\r\n        \"sourcePort\": \"4286\",\r\n        \"requestCookies\": \"\",\r\n        \"spriv\": \"\",\r\n        \"deviceCustomDate1Label\": \"\",\r\n        \"cs4Label\": \"\",\r\n        \"transportProtocol\": \"\",\r\n        \"cat\": \"\",\r\n        \"deviceMacAddress\": \"\",\r\n        \"duid\": \"\",\r\n        \"deviceOutboundInterface\": \"\",\r\n        \"destinationProcessName\": \"\",\r\n        \"spt\": \"\",\r\n        \"cs2Label\": \"\",\r\n        \"sntdom\": \"\",\r\n        \"in\": \"\",\r\n        \"oldfileModificationTime\": \"\",\r\n        \"oldfileName\": \"\",\r\n        \"deviceAction\": \"\",\r\n        \"proto\": \"\",\r\n        \"deviceCustomString2Label\": \"\",\r\n        \"fileType\": \"\",\r\n        \"deviceTranslatedAddress\": \"\",\r\n        \"fsize\": \"\",\r\n        \"dproc\": \"\",\r\n        \"fname\": \"\",\r\n        \"destinationNtDomain\": \"\",\r\n        \"fileCreateTime\": \"2014-10-19 12:41:32\",\r\n        \"ApplicationProtocol\": \"\",\r\n        \"suser\": \"\",\r\n        \"destinationTranslatedPort\": \"\",\r\n        \"cs1Label\": \"\",\r\n        \"oldfsize\": \"\",\r\n        \"startTime\": \"09\\/09\\/2014 16:30:00\",\r\n        \"shost\": \"\",\r\n        \"oldfileCreateTime\": \"\",\r\n        \"oldfilePath\": \"\",\r\n        \"deviceCustomNumber2Label\": \"\",\r\n        \"deviceEventCategory\": \"\",\r\n        \"cs5Label\": \"\",\r\n        \"request\": \"\",\r\n        \"sourceUserPrivileges\": \"\",\r\n        \"dvc\": \"\",\r\n        \"cs5\": \"\",\r\n        \"cs4\": \"\",\r\n        \"cs6\": \"\",\r\n        \"receiptTime\": \"\",\r\n        \"cs3\": \"\",\r\n        \"cs2\": \"\"\r\n      },\r\n      \"severity\": \"medium\",\r\n      \"data\": {\r\n        \"data_field1\": \"ZURNKdbqMSny8\"\r\n      },\r\n      \"start_time\": \"2016-01-14T21:54:39.762095Z\",\r\n      \"source_data_identifier\": \"n4ivxGKh0tHWso74nhJlcSSwKq\",\r\n      \"label\": \"event\",\r\n      \"end_time\": \"2016-01-14T21:54:39.762530Z\",\r\n      \"ingest_connector_id\": 796153,\r\n      \"type\": \"NWPUAbtcNNQDyz9KXurJkdG7QV\"\r\n    }\r\n  }\r\n}"
+				},
+				"url": {
+					"raw": "https://{{host}}:9999/rest/handler/restdatasource_95e3bcff-bfca-454d-b59e-768da6280c38/rest - events",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"port": "9999",
+					"path": [
+						"rest",
+						"handler",
+						"restdatasource_95e3bcff-bfca-454d-b59e-768da6280c38",
+						"rest - events"
+					],
+					"query": [
+						{
+							"key": "zdfg",
+							"value": "adf",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rename Container",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"shanto\"}"
+				},
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/container/50",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"container",
+						"50"
+					],
+					"query": [
+						{
+							"key": "zdfg",
+							"value": "adf",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Replace Container",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"container\": {\"tags\": [], \"id\": 175, \"artifact_count\": 2, \"artifact_update_time\": \"2023-03-09T05:11:01.993701Z\", \"asset_id\": null, \"close_time\": null, \"closing_owner_id\": null, \"closing_rule_run_id\": null, \"container_update_time\": \"2023-03-13T20:50:08.695742Z\", \"create_time\": \"2023-03-06T22:48:57.197513Z\", \"data\": {}, \"description\": \"Container added by Splunk\", \"due_time\": \"2023-03-02T00:42:20.861000Z\", \"end_time\": null, \"hash\": \"ba562897f997441770f670c30b621985\", \"ingest_app_id\": null, \"kill_chain\": null, \"label\": \"splunk_es\", \"name\": \"testing\", \"open_time\": null, \"owner_id\": 1, \"role_id\": null, \"owner_name\": \"admin\", \"sensitivity\": \"amber\", \"severity_id\": \"medium\", \"source_data_identifier\": \"8430f2fa-7e83-4c6a-a4cb-e5febb0dfa160\", \"start_time\": \"2023-03-06T22:48:57.203833Z\", \"status_id\": 1, \"version\": 1, \"workflow_name\": \"\", \"custom_fields\": {}, \"container_type\": \"default\", \"in_case\": false, \"current_phase_id\": null, \"tenant_id\": 0, \"parent_container_id\": null, \"node_guid\": null, \"status\": \"new\"}, \"artifacts\": [{\"tags\": [], \"id\": 395, \"cef\": {\"_raw\": \"1677634766.298, search_name=\\\"Threat - HB - Email Forward DLP - Rule\\\", MailBoxFwrdRule=\\\"Forward Regulatory Affairs emails to PCCU\\\", OriginalFromAddress=\\\"RegulatoryAffairs@heritage.com.au\\\", orig_time=\\\"1677634766.298\\\", fromEmail=\\\"RegulatoryAffairs@heritage.com.au\\\", info_max_time=\\\"1677634800.000000000\\\", info_min_time=\\\"1677548400.000000000\\\", info_search_time=\\\"1677634809.980217000\\\", message_subject=\\\"FW: Secure Super PDS\\\", recipients=\\\"regulatoryaffairs@peopleschoice.com.au\\\", sender=\\\"janke.s@heritage.com.au\\\", src_user=\\\"janke.s@heritage.com.au\\\", src_user_nick=\\\"shae janke\\\", subject=\\\"FW: Secure Super PDS\\\", toEmail=\\\"regulatoryaffairs@peopleschoice.com.au\\\", urgency=\\\"medium\\\"\", \"host\": \"sh-i-0ed4bdabdae3539d2.heritage.splunkcloud.com\", \"_time\": \"2023-03-01T11:40:17.000+10:00\", \"sender\": \"janke.s@heritage.com.au\", \"subject\": \"FW: Secure Super PDS\", \"toEmail\": \"regulatoryaffairs@peopleschoice.com.au\", \"urgency\": \"medium\", \"event_id\": \"8792FB9A-198B-487A-AFC5-3C935118B2F8@@notable@@bab9c0d58f26d99b5629449a8e2011b6\", \"severity\": \"medium\", \"fromEmail\": \"RegulatoryAffairs@heritage.com.au\", \"orig_time\": \"1677634766.298\", \"rule_name\": \"HB - Email Forward DLP\", \"priorities\": \"medium\", \"recipients\": \"regulatoryaffairs@peopleschoice.com.au\", \"rule_title\": \"Possible Email DLP Through Email Fwd Rule\", \"severities\": \"medium\", \"sourcetype\": \"stash\", \"unix_group\": \"default\", \"annotations\": \"{\\\"mitre_attack\\\": [\\\"Automated Exfiltration\\\"]}\", \"disposition\": \"disposition:6\", \"search_name\": \"Threat - HB - Email Forward DLP - Rule\", \"notable_type\": \"notable\", \"sourceUserId\": \"janke.s@heritage.com.au\", \"src_user_last\": \"janke\", \"src_user_nick\": \"shae janke\", \"unix_category\": \"all_hosts\", \"src_user_bunit\": \"compliance and reg affair\", \"src_user_email\": \"janke.s@heritage.com.au\", \"src_user_first\": \"shae\", \"src_user_phone\": \"9811\", \"MailBoxFwrdRule\": \"Forward Regulatory Affairs emails to PCCU\", \"message_subject\": \"FW: Secure Super PDS\", \"annotations._all\": \"Automated Exfiltration\", \"rule_description\": \"Possible DLP detected using mail fwrd rule: \\\"Forward Regulatory Affairs emails to PCCU\\\" by \\\"janke.s@heritage.com.au\\\" with email subject: \\\"FW: Secure Super PDS\\\"\", \"disposition_label\": \"Undetermined\", \"src_user_category\": \"normal\", \"src_user_identity\": [\"u0022971\", \"janke.s@heritage.com.au\"], \"src_user_priority\": \"medium\", \"src_user_managedBy\": \"cn=u0024993 - mayo ishigami,ou=executive management,ou=users,ou=departments,dc=hbs,dc=net,dc=au\", \"src_user_startDate\": \"2016-02-08 05:10:42+00:00\", \"src_user_watchlist\": \"false\", \"OriginalFromAddress\": \"RegulatoryAffairs@heritage.com.au\", \"disposition_default\": \"true\", \"src_user_identity_id\": \"62aab751c4de5c77f037e591\", \"src_user_identity_tag\": [\"compliance and reg affair\", \"normal\"], \"annotations._frameworks\": \"mitre_attack\", \"disposition_description\": \"Event disposition has not been set.\", \"savedsearch_description\": \"Detects any emails forwarded using email rules to non Heritage email domains, in order to detect possible email DLP events. \\n\\n\", \"annotations.mitre_attack\": \"Automated Exfiltration\", \"src_user_risk_object_type\": \"user\"}, \"cef_types\": {}, \"container_id\": 175, \"create_time\": \"2023-03-06T22:48:57.288448Z\", \"data\": {}, \"description\": \"Artifact added by Splunk\", \"end_time\": null, \"hash\": \"b55e6102ce27708545b40ccd2868c353\", \"ingest_app_id\": null, \"kill_chain\": null, \"label\": \"artifact\", \"name\": \"new test\", \"owner_id\": 1, \"playbook_run_id\": null, \"severity_id\": \"medium\", \"source_data_identifier\": \"0a22647e3686338fe15005b0b80995bd\", \"start_time\": \"2023-03-06T22:48:57.292234Z\", \"type\": \"network\", \"update_time\": \"2023-03-09T05:11:01.967052Z\", \"version\": 1, \"in_case\": false, \"has_note\": false, \"parent_container_id\": null, \"parent_artifact_id\": null}, {\"tags\": [], \"id\": 396, \"cef\": {\"act\": \"asdf\"}, \"cef_types\": {}, \"container_id\": 175, \"create_time\": \"2023-03-06T22:48:57.318006Z\", \"data\": {}, \"description\": null, \"end_time\": null, \"hash\": \"ec7e3f5c057eec9f0e32137f56a8d1c0\", \"ingest_app_id\": null, \"kill_chain\": null, \"label\": \"event\", \"name\": \"test\", \"owner_id\": 1, \"playbook_run_id\": null, \"severity_id\": \"medium\", \"source_data_identifier\": \"05ac04d1-c98c-4f96-a9df-2f144de2efed\", \"start_time\": \"2023-03-06T22:48:57.324581Z\", \"type\": null, \"update_time\": \"2023-03-06T22:48:57.318949Z\", \"version\": 1, \"in_case\": false, \"has_note\": false, \"parent_container_id\": null, \"parent_artifact_id\": null}], \"comments\": [{\"id\": 22, \"comment\": \"sadfasdf\", \"container_id\": 175, \"time\": \"2023-03-09T04:11:06.069436Z\", \"create_time\": \"2023-03-09T04:11:06.069436Z\", \"user_id\": 2, \"mentions\": []}, {\"id\": 25, \"comment\": \"asdf\", \"container_id\": 175, \"time\": \"2023-03-15T06:48:37.212450Z\", \"create_time\": \"2023-03-15T06:48:37.212450Z\", \"user_id\": 1, \"mentions\": []}], \"evidence\": [], \"notes\": [], \"phases\": [], \"vault_documents\": [], \"attachments\": []}"
+				},
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/container/182",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"container",
+						"182"
+					],
+					"query": [
+						{
+							"key": "zdfg",
+							"value": "adf",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change container label",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"label\":\"splunk_es_test\"}"
+				},
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/container/82",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"container",
+						"82"
+					],
+					"query": [
+						{
+							"key": "zdfg",
+							"value": "adf",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find all app runs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"cancel\": true}"
+				},
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/app_run?_filter_playbook_run__isnull=True&_filter_status=\"failed\"",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"app_run"
+					],
+					"query": [
+						{
+							"key": "_filter_container",
+							"value": "469519",
+							"disabled": true
+						},
+						{
+							"key": "_filter_playbook_run__in",
+							"value": "2157427,",
+							"disabled": true
+						},
+						{
+							"key": "_filter_playbook_run__isnull",
+							"value": "True"
+						},
+						{
+							"key": "_filter_status",
+							"value": "\"failed\""
+						},
+						{
+							"key": "_filter_start_time__gte",
+							"value": "\"2023-06-24T09:00:02\"",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "page_size",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "_filter_app_name",
+							"value": "\"Phantom\"",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Container Tags",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"tags\":\"\"}"
+				},
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/container/73",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"container",
+						"73"
+					],
+					"query": [
+						{
+							"key": "zdfg",
+							"value": "adf",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Container Audit",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{username}}:{{password}}@{{host}}/rest/container/226/audit?include_expensive=&sort=time",
+					"protocol": "https",
+					"auth": {
+						"user": "{{username}}",
+						"password": "{{password}}"
+					},
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"container",
+						"226",
+						"audit"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": ""
+						},
+						{
+							"key": "_filter_owner_name__icontains",
+							"value": "\"intalock\"",
+							"disabled": true
+						},
+						{
+							"key": "_exclude_owner_name__icontains",
+							"value": "\"intalock\"",
+							"disabled": true
+						},
+						{
+							"key": "_exclude_owner_name__icontains",
+							"value": "\"hb_analyst\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_changed_field__isnull",
+							"value": "\"False\"",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "time"
+						},
+						{
+							"key": "_filter_time",
+							"value": "\"2023-05-26T00:41:13.772838Z\"",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get App Status",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "{{ph-auth-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{host}}/rest/app_status",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"app_status"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact_count__gt",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__destinationDnsDomain__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__sourceDnsDomain__isnull",
+							"value": "False",
+							"disabled": true
+						},
+						{
+							"key": "timerange",
+							"value": "today",
+							"disabled": true
+						},
+						{
+							"key": "_filter_create_time__gte",
+							"value": "\"2022-10-10\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_name__contains",
+							"value": "\"NPP\"",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "create_time",
+							"disabled": true
+						},
+						{
+							"key": "order",
+							"value": "desc",
+							"disabled": true
+						},
+						{
+							"key": "page_size",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "_filter_status__In",
+							"value": "[\"new\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__close_time__isnull",
+							"value": "True",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update an artifact",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"container_id\": 22, \"cef\": {\"fromEmail\": \"smatthew@splunk.com\", \"id\": 130}}"
+				},
+				"url": {
+					"raw": "https://192.168.5.128/rest/artifact",
+					"protocol": "https",
+					"host": [
+						"192",
+						"168",
+						"5",
+						"128"
+					],
+					"path": [
+						"rest",
+						"artifact"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "22",
+							"disabled": true
+						},
+						{
+							"key": "cef",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": {
+			"value": "{{ph-auth-token}}",
+			"key": "ph-auth-token"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

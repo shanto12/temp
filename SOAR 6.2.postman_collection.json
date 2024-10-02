@@ -1,0 +1,712 @@
+{
+	"info": {
+		"_postman_id": "e0a3534f-3382-4659-9e61-e996a6e2fc87",
+		"name": "SOAR 6.2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "11393694"
+	},
+	"item": [
+		{
+			"name": "Post to SOAR REST source",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"container_data\": {\r\n    \"asset_id\": \"4\",\r\n    \"status\": \"new\",\r\n    \"description\": \"7PJFMqhL1U1IuK7AuXdJKsoAea\",\r\n    \"name\": \"shanto test 2\",\r\n    \"sensitivity\": \"amber\",\r\n    \"source_data_identifier\": \"kmjafnviJxaXsRlaIVPm52BbAw\",\r\n    \"due_time\": \"2016-01-14T21:54:39.517382Z\",\r\n    \"end_time\": \"2016-01-14T21:54:39.517555Z\",\r\n    \"ingest_connector_id\": 437614,\r\n    \"data\": {\r\n      \"data_field1\": \"BGhXm6wizmLjt\"\r\n    },\r\n    \"start_time\": \"2016-01-14T21:54:39.517955Z\",\r\n    \"severity\": \"medium\",\r\n    \"artifact_data\": {\r\n      \"asset_id\": 601925,\r\n      \"cef\": {\r\n        \"requestClientApplication\": \"\",\r\n        \"destinationAddress\": \"\",\r\n        \"deviceFacility\": \"\",\r\n        \"deviceExternalId\": \"\",\r\n        \"cn2Label\": \"\",\r\n        \"deviceCustomDate1\": \"\",\r\n        \"deviceCustomDate2\": \"\",\r\n        \"cs1\": \"\",\r\n        \"deviceCustomNumber3Label\": \"\",\r\n        \"destinationDnsDomain\": \"\",\r\n        \"destinationUserName\": \"\",\r\n        \"fileHash\": \"8b317b683d052efda16ab03c68ae2dee\",\r\n        \"filePath\": \"\",\r\n        \"end\": \"\",\r\n        \"sourceTranslatedAddress\": \"\",\r\n        \"fileName\": \"UNAVAILABLE\",\r\n        \"fileModificationTime\": \"\",\r\n        \"deviceCustomString5Label\": \"\",\r\n        \"deviceAddress\": \"\",\r\n        \"destinationHostName\": \"\",\r\n        \"fileId\": \"\",\r\n        \"dpt\": \"\",\r\n        \"oldfileHash\": \"\",\r\n        \"destinationServiceName\": \"\",\r\n        \"sourceNtDomain\": \"\",\r\n        \"requestMethod\": \"\",\r\n        \"cn1Label\": \"\",\r\n        \"sourceDnsDomain\": \"\",\r\n        \"endTime\": \"\",\r\n        \"sourceAddress\": \"10.10.0.201\",\r\n        \"bytesIn\": \"\",\r\n        \"bytesOut\": \"\",\r\n        \"deviceProcessName\": \"\",\r\n        \"cn3Label\": \"\",\r\n        \"deviceCustomString4Label\": \"\",\r\n        \"cs6Label\": \"\",\r\n        \"out\": \"\",\r\n        \"rt\": \"\",\r\n        \"cnt\": \"\",\r\n        \"sourceHostName\": \"\",\r\n        \"deviceCustomNumber3\": \"\",\r\n        \"dst\": \"103.230.84.239\",\r\n        \"deviceHostname\": \"\",\r\n        \"deviceCustomNumber1Label\": \"\",\r\n        \"externalId\": \"\",\r\n        \"deviceDirection\": \"\",\r\n        \"method\": \"\",\r\n        \"dmac\": \"\",\r\n        \"oldfileId\": \"\",\r\n        \"sourceServiceName\": \"\",\r\n        \"baseEventCount\": \"120\",\r\n        \"dvchost\": \"\",\r\n        \"destinationUserPrivileges\": \"\",\r\n        \"fileSize\": \"\",\r\n        \"sourceMacAddress\": \"\",\r\n        \"deviceCustomString6\": \"\",\r\n        \"deviceCustomString5\": \"\",\r\n        \"deviceCustomString4\": \"\",\r\n        \"deviceCustomString3\": \"\",\r\n        \"deviceCustomString1Label\": \"\",\r\n        \"destinationMacAddress\": \"\",\r\n        \"duser\": \"\",\r\n        \"cs3Label\": \"\",\r\n        \"cn2\": \"\",\r\n        \"cn3\": \"\",\r\n        \"destinationTranslatedAddress\": \"\",\r\n        \"cn1\": \"\",\r\n        \"deviceCustomString3Label\": \"\",\r\n        \"act\": \"\",\r\n        \"dhost\": \"\",\r\n        \"filePermission\": \"\",\r\n        \"dntdom\": \"\",\r\n        \"deviceCustomString6Label\": \"\",\r\n        \"app\": \"\",\r\n        \"smac\": \"\",\r\n        \"deviceInboundInterface\": \"\",\r\n        \"message\": \"\",\r\n        \"deviceDnsDomain\": \"\",\r\n        \"deviceCustomNumber2\": \"\",\r\n        \"deviceCustomNumber1\": \"\",\r\n        \"deviceCustomDate2Label\": \"\",\r\n        \"dpriv\": \"\",\r\n        \"suid\": \"\",\r\n        \"oldfilePermission\": \"\",\r\n        \"deviceCustomString2\": \"\",\r\n        \"start\": \"\",\r\n        \"deviceCustomString1\": \"\",\r\n        \"msg\": \"\",\r\n        \"src\": \"\",\r\n        \"sourceUserId\": \"\",\r\n        \"requestURL\": \"\",\r\n        \"sourceUserName\": \"\",\r\n        \"sourceTranslatedPort\": \"\",\r\n        \"oldfileType\": \"\",\r\n        \"destinationPort\": \"80\",\r\n        \"destinationUserId\": \"\",\r\n        \"sourcePort\": \"4286\",\r\n        \"requestCookies\": \"\",\r\n        \"spriv\": \"\",\r\n        \"deviceCustomDate1Label\": \"\",\r\n        \"cs4Label\": \"\",\r\n        \"transportProtocol\": \"\",\r\n        \"cat\": \"\",\r\n        \"deviceMacAddress\": \"\",\r\n        \"duid\": \"\",\r\n        \"deviceOutboundInterface\": \"\",\r\n        \"destinationProcessName\": \"\",\r\n        \"spt\": \"\",\r\n        \"cs2Label\": \"\",\r\n        \"sntdom\": \"\",\r\n        \"in\": \"\",\r\n        \"oldfileModificationTime\": \"\",\r\n        \"oldfileName\": \"\",\r\n        \"deviceAction\": \"\",\r\n        \"proto\": \"\",\r\n        \"deviceCustomString2Label\": \"\",\r\n        \"fileType\": \"\",\r\n        \"deviceTranslatedAddress\": \"\",\r\n        \"fsize\": \"\",\r\n        \"dproc\": \"\",\r\n        \"fname\": \"\",\r\n        \"destinationNtDomain\": \"\",\r\n        \"fileCreateTime\": \"2014-10-19 12:41:32\",\r\n        \"ApplicationProtocol\": \"\",\r\n        \"suser\": \"\",\r\n        \"destinationTranslatedPort\": \"\",\r\n        \"cs1Label\": \"\",\r\n        \"oldfsize\": \"\",\r\n        \"startTime\": \"09\\/09\\/2014 16:30:00\",\r\n        \"shost\": \"\",\r\n        \"oldfileCreateTime\": \"\",\r\n        \"oldfilePath\": \"\",\r\n        \"deviceCustomNumber2Label\": \"\",\r\n        \"deviceEventCategory\": \"\",\r\n        \"cs5Label\": \"\",\r\n        \"request\": \"\",\r\n        \"sourceUserPrivileges\": \"\",\r\n        \"dvc\": \"\",\r\n        \"cs5\": \"\",\r\n        \"cs4\": \"\",\r\n        \"cs6\": \"\",\r\n        \"receiptTime\": \"\",\r\n        \"cs3\": \"\",\r\n        \"cs2\": \"\"\r\n      },\r\n      \"severity\": \"medium\",\r\n      \"data\": {\r\n        \"data_field1\": \"ZURNKdbqMSny8\"\r\n      },\r\n      \"start_time\": \"2016-01-14T21:54:39.762095Z\",\r\n      \"source_data_identifier\": \"n4ivxGKh0tHWso74nhJlcSSwKq\",\r\n      \"label\": \"event\",\r\n      \"end_time\": \"2016-01-14T21:54:39.762530Z\",\r\n      \"ingest_connector_id\": 796153,\r\n      \"type\": \"NWPUAbtcNNQDyz9KXurJkdG7QV\"\r\n    }\r\n  }\r\n}"
+				},
+				"url": {
+					"raw": "{{rest_post_url}}",
+					"host": [
+						"{{rest_post_url}}"
+					],
+					"query": [
+						{
+							"key": "zdfg",
+							"value": "adf",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Run a playbook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"playbook_id\": \"local/CTDR DLP Flow Track Single\", \"container_id\": \"101562\", \"run\": \"true\", \"log_level\": \"1\", \"scope\": \"all\"}"
+				},
+				"url": {
+					"raw": "{{host}}/rest/playbook_run",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"playbook_run"
+					],
+					"query": [
+						{
+							"key": "zdfg",
+							"value": "adf",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get containers with at least one artifact Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{host}}/rest/container?_filter_source_data_identifier=\"kmjafnviJxaXsRlaIVPm52BbAw\"",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"container"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "_filter_source_data_identifier",
+							"value": "\"kmjafnviJxaXsRlaIVPm52BbAw\""
+						},
+						{
+							"key": "_filter_id",
+							"value": "93172",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get container",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "csrftoken",
+						"value": "EZ4UnECctjjDEJlSR2BhxMFgDMkvHSD561HYct3dTaQ6uIvRM06tBhS2uFm3y6Rr",
+						"type": "text"
+					},
+					{
+						"key": "X-CSRFToken",
+						"value": "EZ4UnECctjjDEJlSR2BhxMFgDMkvHSD561HYct3dTaQ6uIvRM06tBhS2uFm3y6Rr",
+						"type": "text"
+					},
+					{
+						"key": "X-CSRF-Token",
+						"value": "EZ4UnECctjjDEJlSR2BhxMFgDMkvHSD561HYct3dTaQ6uIvRM06tBhS2uFm3y6Rr",
+						"type": "text"
+					},
+					{
+						"key": "auth_token",
+						"value": "eyJ4NXQjUzI1NiI6IkNmNDBic3dUWjNMMWpFSGExSkZQZU5PTXdSZGNYMWt2MG9zMjJyNHBHUTQiLCJraWQiOiI4ODc3Ni1BUElfRW5hYmxlbWVudF9TeW5hcHNlX1BEUCIsImN0eSI6IkpXUyIsInR5cCI6IkpXVCIsImFsZyI6IlJTMjU2In0.eyJhdWQiOiJjb20ubWFzdGVyY2FyZC5waGFudG9tIiwic3ViIjoiZTE2MDEwMSIsIm5iZiI6MTcwODMxMzI5OSwiZ3JwIjpbImdycC1ncmMtYXJjaGVyIiwiZ3JwLXNlY3VyaXR5LWJpcnRocmlnaHQiXSwiYXV0aF9sZXZlbCI6IjJGQSIsImRvbWFpbiI6ImtzYy5waGFudG9tLm1hc3RlcmNhcmQuaW50IiwiaXNzIjoiTWFzdGVyY2FyZCIsImFsaWFzIjoiZTE2MDEwMSIsImV4cCI6MTcwODM0MjEwMCwiaWF0IjoxNzA4MzEzMzAwLCJqdGkiOiIxZWNjOTAxZmJkMmMyYmJlMGRmNTQ1YzVlYmNkMzNjOSIsInRlbmFudCI6ImRjPWNvcnAsZGM9bWFzdGVyY2FyZCxkYz1vcmcifQ.cizQnexKR3-IPmCVuwzTHikc19GTn4KwukDNs4tbKTlD1JX9ErI2QivQUCiZoogBlnMi8-H2sGagSkNLIOyXsHpUg0PLX4oFHbdpV1wBm5XMZQ0ui1-BMUjpg7pTwqRDSm6B9F_Uf4wZLNi92NV657XAt6amCeLSPLnyi538S8ieehWyDD3Qwzp8CVeJ587REYkX8Ix1qQHeWZjdmFknBKxtWlNpx7xcKVglDWlTnOMYVEZqrseb9vg3PBTy41JRQnlPAOSbaLA97hDHjdcjQW32czkyY5w48VuIYnhXJxgobgmfwxsZ86RaDf4OjtEJy2QOlNgIqxPwVweBCDd7rw",
+						"type": "text"
+					},
+					{
+						"key": "sessionid",
+						"value": "yjam5g9wgro1tk3yi6fx1h1we3wfuifn",
+						"type": "text"
+					},
+					{
+						"key": "token_key",
+						"value": "EZ4UnECctjjDEJlSR2BhxMFgDMkvHSD561HYct3dTaQ6uIvRM06tBhS2uFm3y6Rr",
+						"type": "text"
+					},
+					{
+						"key": "experience_id",
+						"value": "4f039a7d-5025-4bf7-3ad0-932e1d92a4e1; telemetry_data=1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/rest/container/100648?include_expensive=",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"container",
+						"100648"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": ""
+						},
+						{
+							"key": "_filter_source_data_identifier",
+							"value": "\"kmjafnviJxaXsRlaIVPm52BbAw\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_name__icontains",
+							"value": "\"Ivanti Incident %2317746\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_name__icontains",
+							"value": "\"dlp\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_data__summary__src_category__icontains",
+							"value": "\"endpoints\"",
+							"disabled": true
+						},
+						{
+							"key": "page_size",
+							"value": "11",
+							"disabled": true
+						},
+						{
+							"key": "_filter_create_time__gte",
+							"value": "\"2024-02-20 06:22:30\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_data__summary__src_user_email__icontains",
+							"value": "\"saumiyaa.pathmarajah@fmglobal.com\"",
+							"disabled": true
+						},
+						{
+							"key": "_exclude_id",
+							"value": "\"105657\"",
+							"disabled": true
+						},
+						{
+							"key": "_exclude_status",
+							"value": "\"Closed\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__isnull",
+							"value": "False",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Container",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "csrftoken",
+						"value": "EZ4UnECctjjDEJlSR2BhxMFgDMkvHSD561HYct3dTaQ6uIvRM06tBhS2uFm3y6Rr",
+						"type": "text"
+					},
+					{
+						"key": "X-CSRFToken",
+						"value": "EZ4UnECctjjDEJlSR2BhxMFgDMkvHSD561HYct3dTaQ6uIvRM06tBhS2uFm3y6Rr",
+						"type": "text"
+					},
+					{
+						"key": "X-CSRF-Token",
+						"value": "EZ4UnECctjjDEJlSR2BhxMFgDMkvHSD561HYct3dTaQ6uIvRM06tBhS2uFm3y6Rr",
+						"type": "text"
+					},
+					{
+						"key": "auth_token",
+						"value": "eyJ4NXQjUzI1NiI6IkNmNDBic3dUWjNMMWpFSGExSkZQZU5PTXdSZGNYMWt2MG9zMjJyNHBHUTQiLCJraWQiOiI4ODc3Ni1BUElfRW5hYmxlbWVudF9TeW5hcHNlX1BEUCIsImN0eSI6IkpXUyIsInR5cCI6IkpXVCIsImFsZyI6IlJTMjU2In0.eyJhdWQiOiJjb20ubWFzdGVyY2FyZC5waGFudG9tIiwic3ViIjoiZTE2MDEwMSIsIm5iZiI6MTcwODMxMzI5OSwiZ3JwIjpbImdycC1ncmMtYXJjaGVyIiwiZ3JwLXNlY3VyaXR5LWJpcnRocmlnaHQiXSwiYXV0aF9sZXZlbCI6IjJGQSIsImRvbWFpbiI6ImtzYy5waGFudG9tLm1hc3RlcmNhcmQuaW50IiwiaXNzIjoiTWFzdGVyY2FyZCIsImFsaWFzIjoiZTE2MDEwMSIsImV4cCI6MTcwODM0MjEwMCwiaWF0IjoxNzA4MzEzMzAwLCJqdGkiOiIxZWNjOTAxZmJkMmMyYmJlMGRmNTQ1YzVlYmNkMzNjOSIsInRlbmFudCI6ImRjPWNvcnAsZGM9bWFzdGVyY2FyZCxkYz1vcmcifQ.cizQnexKR3-IPmCVuwzTHikc19GTn4KwukDNs4tbKTlD1JX9ErI2QivQUCiZoogBlnMi8-H2sGagSkNLIOyXsHpUg0PLX4oFHbdpV1wBm5XMZQ0ui1-BMUjpg7pTwqRDSm6B9F_Uf4wZLNi92NV657XAt6amCeLSPLnyi538S8ieehWyDD3Qwzp8CVeJ587REYkX8Ix1qQHeWZjdmFknBKxtWlNpx7xcKVglDWlTnOMYVEZqrseb9vg3PBTy41JRQnlPAOSbaLA97hDHjdcjQW32czkyY5w48VuIYnhXJxgobgmfwxsZ86RaDf4OjtEJy2QOlNgIqxPwVweBCDd7rw",
+						"type": "text"
+					},
+					{
+						"key": "sessionid",
+						"value": "yjam5g9wgro1tk3yi6fx1h1we3wfuifn",
+						"type": "text"
+					},
+					{
+						"key": "token_key",
+						"value": "EZ4UnECctjjDEJlSR2BhxMFgDMkvHSD561HYct3dTaQ6uIvRM06tBhS2uFm3y6Rr",
+						"type": "text"
+					},
+					{
+						"key": "experience_id",
+						"value": "4f039a7d-5025-4bf7-3ad0-932e1d92a4e1; telemetry_data=1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/rest/container?include_expensive=&_filter_id=108834",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"container"
+					],
+					"query": [
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": ""
+						},
+						{
+							"key": "_filter_data__summary__src_category__icontains",
+							"value": "\"endpoints\"",
+							"disabled": true
+						},
+						{
+							"key": "page_size",
+							"value": "11",
+							"disabled": true
+						},
+						{
+							"key": "_filter_create_time__gte",
+							"value": "\"2024-02-20 06:22:30\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_data__summary__src_user_email__icontains",
+							"value": "\"saumiyaa.pathmarajah@fmglobal.com\"",
+							"disabled": true
+						},
+						{
+							"key": "_exclude_id",
+							"value": "\"105657\"",
+							"disabled": true
+						},
+						{
+							"key": "_exclude_status",
+							"value": "\"Closed\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__body__content__icontains",
+							"value": "\"fmglobal-it-amc.ivanticloud.com\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_name__icontains",
+							"value": "\"15291\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_artifact__cef__ivanti_incident_id",
+							"value": "\"21418\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_id",
+							"value": "108834"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get playbook run",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "csrftoken",
+						"value": "EZ4UnECctjjDEJlSR2BhxMFgDMkvHSD561HYct3dTaQ6uIvRM06tBhS2uFm3y6Rr",
+						"type": "text"
+					},
+					{
+						"key": "X-CSRFToken",
+						"value": "EZ4UnECctjjDEJlSR2BhxMFgDMkvHSD561HYct3dTaQ6uIvRM06tBhS2uFm3y6Rr",
+						"type": "text"
+					},
+					{
+						"key": "X-CSRF-Token",
+						"value": "EZ4UnECctjjDEJlSR2BhxMFgDMkvHSD561HYct3dTaQ6uIvRM06tBhS2uFm3y6Rr",
+						"type": "text"
+					},
+					{
+						"key": "auth_token",
+						"value": "eyJ4NXQjUzI1NiI6IkNmNDBic3dUWjNMMWpFSGExSkZQZU5PTXdSZGNYMWt2MG9zMjJyNHBHUTQiLCJraWQiOiI4ODc3Ni1BUElfRW5hYmxlbWVudF9TeW5hcHNlX1BEUCIsImN0eSI6IkpXUyIsInR5cCI6IkpXVCIsImFsZyI6IlJTMjU2In0.eyJhdWQiOiJjb20ubWFzdGVyY2FyZC5waGFudG9tIiwic3ViIjoiZTE2MDEwMSIsIm5iZiI6MTcwODMxMzI5OSwiZ3JwIjpbImdycC1ncmMtYXJjaGVyIiwiZ3JwLXNlY3VyaXR5LWJpcnRocmlnaHQiXSwiYXV0aF9sZXZlbCI6IjJGQSIsImRvbWFpbiI6ImtzYy5waGFudG9tLm1hc3RlcmNhcmQuaW50IiwiaXNzIjoiTWFzdGVyY2FyZCIsImFsaWFzIjoiZTE2MDEwMSIsImV4cCI6MTcwODM0MjEwMCwiaWF0IjoxNzA4MzEzMzAwLCJqdGkiOiIxZWNjOTAxZmJkMmMyYmJlMGRmNTQ1YzVlYmNkMzNjOSIsInRlbmFudCI6ImRjPWNvcnAsZGM9bWFzdGVyY2FyZCxkYz1vcmcifQ.cizQnexKR3-IPmCVuwzTHikc19GTn4KwukDNs4tbKTlD1JX9ErI2QivQUCiZoogBlnMi8-H2sGagSkNLIOyXsHpUg0PLX4oFHbdpV1wBm5XMZQ0ui1-BMUjpg7pTwqRDSm6B9F_Uf4wZLNi92NV657XAt6amCeLSPLnyi538S8ieehWyDD3Qwzp8CVeJ587REYkX8Ix1qQHeWZjdmFknBKxtWlNpx7xcKVglDWlTnOMYVEZqrseb9vg3PBTy41JRQnlPAOSbaLA97hDHjdcjQW32czkyY5w48VuIYnhXJxgobgmfwxsZ86RaDf4OjtEJy2QOlNgIqxPwVweBCDd7rw",
+						"type": "text"
+					},
+					{
+						"key": "sessionid",
+						"value": "yjam5g9wgro1tk3yi6fx1h1we3wfuifn",
+						"type": "text"
+					},
+					{
+						"key": "token_key",
+						"value": "EZ4UnECctjjDEJlSR2BhxMFgDMkvHSD561HYct3dTaQ6uIvRM06tBhS2uFm3y6Rr",
+						"type": "text"
+					},
+					{
+						"key": "experience_id",
+						"value": "4f039a7d-5025-4bf7-3ad0-932e1d92a4e1; telemetry_data=1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/rest/playbook_run",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"playbook_run"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_source_data_identifier",
+							"value": "\"kmjafnviJxaXsRlaIVPm52BbAw\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_name__icontains",
+							"value": "\"Ivanti Incident %2317746\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_data__summary__src_category__icontains",
+							"value": "\"endpoints\"",
+							"disabled": true
+						},
+						{
+							"key": "page_size",
+							"value": "11",
+							"disabled": true
+						},
+						{
+							"key": "_filter_create_time__gte",
+							"value": "\"2024-02-20 06:22:30\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_data__summary__src_user_email__icontains",
+							"value": "\"saumiyaa.pathmarajah@fmglobal.com\"",
+							"disabled": true
+						},
+						{
+							"key": "_exclude_id",
+							"value": "\"105657\"",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get playbook",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "csrftoken",
+						"value": "EZ4UnECctjjDEJlSR2BhxMFgDMkvHSD561HYct3dTaQ6uIvRM06tBhS2uFm3y6Rr",
+						"type": "text"
+					},
+					{
+						"key": "X-CSRFToken",
+						"value": "EZ4UnECctjjDEJlSR2BhxMFgDMkvHSD561HYct3dTaQ6uIvRM06tBhS2uFm3y6Rr",
+						"type": "text"
+					},
+					{
+						"key": "X-CSRF-Token",
+						"value": "EZ4UnECctjjDEJlSR2BhxMFgDMkvHSD561HYct3dTaQ6uIvRM06tBhS2uFm3y6Rr",
+						"type": "text"
+					},
+					{
+						"key": "auth_token",
+						"value": "eyJ4NXQjUzI1NiI6IkNmNDBic3dUWjNMMWpFSGExSkZQZU5PTXdSZGNYMWt2MG9zMjJyNHBHUTQiLCJraWQiOiI4ODc3Ni1BUElfRW5hYmxlbWVudF9TeW5hcHNlX1BEUCIsImN0eSI6IkpXUyIsInR5cCI6IkpXVCIsImFsZyI6IlJTMjU2In0.eyJhdWQiOiJjb20ubWFzdGVyY2FyZC5waGFudG9tIiwic3ViIjoiZTE2MDEwMSIsIm5iZiI6MTcwODMxMzI5OSwiZ3JwIjpbImdycC1ncmMtYXJjaGVyIiwiZ3JwLXNlY3VyaXR5LWJpcnRocmlnaHQiXSwiYXV0aF9sZXZlbCI6IjJGQSIsImRvbWFpbiI6ImtzYy5waGFudG9tLm1hc3RlcmNhcmQuaW50IiwiaXNzIjoiTWFzdGVyY2FyZCIsImFsaWFzIjoiZTE2MDEwMSIsImV4cCI6MTcwODM0MjEwMCwiaWF0IjoxNzA4MzEzMzAwLCJqdGkiOiIxZWNjOTAxZmJkMmMyYmJlMGRmNTQ1YzVlYmNkMzNjOSIsInRlbmFudCI6ImRjPWNvcnAsZGM9bWFzdGVyY2FyZCxkYz1vcmcifQ.cizQnexKR3-IPmCVuwzTHikc19GTn4KwukDNs4tbKTlD1JX9ErI2QivQUCiZoogBlnMi8-H2sGagSkNLIOyXsHpUg0PLX4oFHbdpV1wBm5XMZQ0ui1-BMUjpg7pTwqRDSm6B9F_Uf4wZLNi92NV657XAt6amCeLSPLnyi538S8ieehWyDD3Qwzp8CVeJ587REYkX8Ix1qQHeWZjdmFknBKxtWlNpx7xcKVglDWlTnOMYVEZqrseb9vg3PBTy41JRQnlPAOSbaLA97hDHjdcjQW32czkyY5w48VuIYnhXJxgobgmfwxsZ86RaDf4OjtEJy2QOlNgIqxPwVweBCDd7rw",
+						"type": "text"
+					},
+					{
+						"key": "sessionid",
+						"value": "yjam5g9wgro1tk3yi6fx1h1we3wfuifn",
+						"type": "text"
+					},
+					{
+						"key": "token_key",
+						"value": "EZ4UnECctjjDEJlSR2BhxMFgDMkvHSD561HYct3dTaQ6uIvRM06tBhS2uFm3y6Rr",
+						"type": "text"
+					},
+					{
+						"key": "experience_id",
+						"value": "4f039a7d-5025-4bf7-3ad0-932e1d92a4e1; telemetry_data=1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/rest/playbook?_filter_id=\"877\"",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"playbook"
+					],
+					"query": [
+						{
+							"key": "_filter_type__in",
+							"value": "[\"normal\", \"automation\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter__roles__in",
+							"value": "[\"Administrator\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_tags__in",
+							"value": "[\"benign\", \"malicious\"]",
+							"disabled": true
+						},
+						{
+							"key": "_filter_source_data_identifier",
+							"value": "\"kmjafnviJxaXsRlaIVPm52BbAw\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_name__icontains",
+							"value": "\"Ivanti Incident %2317746\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_data__summary__src_category__icontains",
+							"value": "\"endpoints\"",
+							"disabled": true
+						},
+						{
+							"key": "page_size",
+							"value": "11",
+							"disabled": true
+						},
+						{
+							"key": "_filter_create_time__gte",
+							"value": "\"2024-02-20 06:22:30\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_data__summary__src_user_email__icontains",
+							"value": "\"saumiyaa.pathmarajah@fmglobal.com\"",
+							"disabled": true
+						},
+						{
+							"key": "_exclude_id",
+							"value": "\"105657\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_id",
+							"value": "\"877\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find all action runs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ph-auth-token",
+						"value": "VabxpO5MTRyXhx4lbvxPMBkJ89LbartCmgQNMwcSXuo=",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"cancel\": true}"
+				},
+				"url": {
+					"raw": "https://{{host}}/rest/action_run?_filter_name__icontains=\"reputation\"&_filter_status=\"success\"&include_expensive",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rest",
+						"action_run"
+					],
+					"query": [
+						{
+							"key": "_filter_container",
+							"value": "510712",
+							"disabled": true
+						},
+						{
+							"key": "_filter_playbook_run__in",
+							"value": "2157427,",
+							"disabled": true
+						},
+						{
+							"key": "_filter_create_time__gte",
+							"value": "\"2023-07-10T01:01:48.061000Z\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_status",
+							"value": "\"failed\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_name__icontains",
+							"value": "\"reputation\""
+						},
+						{
+							"key": "_filter_status",
+							"value": "\"success\""
+						},
+						{
+							"key": "_filter_action",
+							"value": "\"run query\"",
+							"disabled": true
+						},
+						{
+							"key": "_exclude_status",
+							"value": "\"success\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_status",
+							"value": "\"running\"",
+							"disabled": true
+						},
+						{
+							"key": "_filter_id",
+							"value": "2880595",
+							"disabled": true
+						},
+						{
+							"key": "_filter_playbook",
+							"value": "3288",
+							"disabled": true
+						},
+						{
+							"key": "include_expensive",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add container tags",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"tags\": [\"test\"]}"
+				},
+				"url": "{{host}}/rest/container/107488"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": {
+			"value": "{{ph-auth-token}}",
+			"key": "ph-auth-token"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
